@@ -22,7 +22,6 @@ from django.conf.urls.static import static
 from users import views as user_views
 
 urlpatterns = [
-    url(r'^search/', include('search.urls', namespace='search')),
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
