@@ -3,6 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import (ListView,DetailView,CreateView,UpdateView,DeleteView)
 from .models import Post
+from django.shortcuts import render
+from django.db.models import Q
 
 
 def home(request):
@@ -71,4 +73,26 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+    return render(request, 'blog/RecPage.html', {'title': 'About'})
+
+def searchgames(request):
+    if request.method == 'GET':
+        query= request.GET.get('q')
+
+        submitbutton= request.GET.get('submit')
+
+        if query is not None:
+            lookups= Q(title__icontains=query) | Q(content__icontains=query)
+
+            results= Post.objects.filter(lookups).distinct()
+
+            context={'results': results,
+                     'submitbutton': submitbutton}
+
+            return render(request, 'blog/RecPage.html', context)
+
+        else:
+            return render(request, 'blog/RecPage.html')
+
+    else:
+        return render(request, 'blog/RecPage.html')

@@ -1,8 +1,12 @@
 from django.urls import path
-from .views import (PostListView,PostDetailView,PostCreateView,PostUpdateView,PostDeleteView,UserPostListView)
+from .views import (PostListView,PostDetailView,PostCreateView,PostUpdateView,PostDeleteView,UserPostListView,searchgames)
 from . import views
+from django.conf.urls import url
+from django.contrib import admin
+
 
 urlpatterns = [
+    url(r'^$', searchgames, name='searchgames'),
     path('', PostListView.as_view(), name='blog-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
