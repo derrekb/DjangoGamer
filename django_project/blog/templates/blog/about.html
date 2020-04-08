@@ -1,11 +1,13 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<h1>Search Page</h1>
+
+<h1>GMRZ Search</h1>
+
 
 <br/>
 <form action="{% url 'searchposts' %}" method="GET" value="{{request.GET.q}}">
-Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search Games"/>
-<input type="submit" name="submit" value="Search"/>
+Search <input type="text" name="q" value="{{request.GET.q}}" placeholder=""/>
+<input type="submit" name="submit" value="Find me some Games"/>
 </form>
 
 
