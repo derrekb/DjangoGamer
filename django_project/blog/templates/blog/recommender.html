@@ -1,0 +1,73 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/recommender.css' %}">
+</head>
+
+<div class = 'text-center'>
+
+<h1 class = 'row justify-content-center'>
+    Recommender Search 
+</h1>
+
+<h4 class 'mx-auto'>
+    "Whatcha playin?"
+</h4>
+
+<p class = 'text-center'>
+
+    Type in a game and we'll return what you some recommendations.
+
+</div>
+
+
+<!---
+<form action="{% url 'searchposts' %}" method="GET" value="{{request.GET.q}}">
+<input type="text" name="q" value="{{request.GET.q}}" placeholder="" />
+<input type="submit" name="submit" value="Find!"/>
+</form>
+-->  
+
+<br/>
+<body>
+
+    <form  action="{% url 'searchposts' %}" method="GET" value="{{request.GET.q}}">
+        <!--Search Bar-->        
+  <div class="row mb-4">
+    <div class="form-group col-md-9 ">
+      <input id="exampleFormControlInput5" type="text" placeholder="Title. Ex. Call of Juarez" class="form-control form-control-underlined">
+    </div>
+
+    <!--Button-->
+    <div class="form-group col-md-3">
+      <button type="submit" class="btn btn-secondary rounded-pill btn-block shadow-sm">Find!</button>
+    </div>
+  </div>
+    </form>
+
+</body>
+
+
+
+{% if submitbutton == 'Search' and request.GET.q != '' %}
+{% if results %}
+<h1>Results for <b>{{ request.GET.q }}</b></h1>
+<br/><br/>
+
+{% for result in results %}
+
+{{result.title}}
+<br/>
+
+{{result.content}}
+<br/>
+
+{% endfor %}
+{% else %}
+No search results for this query
+{% endif %}
+{% endif %}
+
+{% endblock content %}

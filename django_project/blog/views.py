@@ -72,8 +72,8 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
-def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+def recommender(request):
+    return render(request, 'blog/recommender.html', {'title': 'recommender'})
 
 def searchposts(request):
     if request.method == 'GET':
@@ -89,10 +89,10 @@ def searchposts(request):
             context={'results': results,
                      'submitbutton': submitbutton}
 
-            return render(request, 'blog/about.html', context)
+            return render(request, 'blog/recommender.html', context)
 
         else:
-            return render(request, 'blog/about.html')
+            return render(request, 'blog/recommender.html')
 
     else:
-        return render(request, 'blog/about.html')
+        return render(request, 'blog/recommender.html')
