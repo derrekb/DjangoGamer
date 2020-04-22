@@ -1,11 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins: 400,500,700');
+
+
+
+
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222
+}
+
+.navbar {
+  padding: .8rem;
+}
+
+.navbar-nav li {
+  padding-right: 20px;
+}
+
+.nav-link{
+  font-size: 1.1em !important;
+}
+
+.carousel-inner img {
+
+
+  width: 100%;
+  height: 45vh;
+}
+
+.two-column-sec img {
+  width: 100;
+  height: 100%;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.carousel-caption h1 {
+  font-size: 500%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 15px #000;
+}
+
+.carousel-caption h3 {
+  font-size: 200%;
+  font-weight: 500;
+  text-shadow: 1px 1px 10px #000;
+  padding-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #6648b1;
+  border: 1px solid #6648b1;
+}
+
+.btn-primary:hover {
+  background-color: #563d7c;
+  border: 1px solid #563d7c;
+
+}
+
+.jumbotron {
+  padding: 1rem;
+  border-radius: 0;
+}
+
+.padding {
+  padding-bottom: 2rem;
+}
+.welcome {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+
+}
+
+.welcome hr {
+  border-top: 2px solid #b4b4b4;
+  width: 95%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+
+.fa-python {
+  color: #e54d26
+}
+
+.fa-html5 {
+  color: #563d7c;
+}
+
+.fa-bootstrap {
+  color: #2163af;
+}
+
+.fa-python, .fa-bootstrap, .fa-html5 {
+  font-size: 4em;
+  margin: 1rem;
+
+}
+/*
 body {
-    background: #fafafa;
-    color: #333333;
+    background: #ffffff;
+        color: #b30ce6;
     margin-top: 5rem;
   }
+
+
+
+  /*heading colors (carousal text) */
+  h1,h4, h6 {
+    color: #ffffff;
+  }
   
-  h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+  h3.tagline, h3.motto, h3.display-1{
+    color: white;
+  }
+
+  h5.info, h5.hours , h3.py-display{
+
+    color: black;
+  }
+
+  h1.display-4 {
+    color: black;
+  }
+
+  h2{
+    color: #428bca;
   }
   
   ul {
@@ -15,27 +144,138 @@ body {
   .bg-steel {
     background-image: linear-gradient(black,purple);
   }
-  
+  /* Navbar Text */
   .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #ffffff;
   }
   
+  /* When hovering over links at navbar */
   .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #8409e2;
   }
   
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
   }
   
+  /*Section for 'Posts' */
   .content-section {
     background: #ffffff;
     padding: 10px 20px;
-    border: 1px solid #dddddd;
+    border: 1px solid #000000;
     border-radius: 3px;
     margin-bottom: 20px;
   }
+
+  /*social links*/
+  .social a {
+    font-size: 4.5em;
+    padding: 3rem;
+  }
+
+  .fa-facebook {
+    color: #3b5998;
+  }
+  .fa-instagram {
+    color:#517fa8;
+  }
+  .fa-twitter {
+    color:#00aced;
+   }
+   .fa-discord {
+    color:#7289da;
+    }
+
+    .fa-discord:hover,
+    .fa-facebook:hover,
+    .fa-instagram:hover,
+    .fa-twitter:hover {
+      color:#d5d5d5;
+      }
+
+
+
+      footer {
+        background-color: #3f3f3f;
+        color: #d5d5d5;
+        padding-top: 2rem;
+      }
+
+  hr.light {
+
+    border-top: 1px solid #d5d5d5;
+
+    width: 75%;
+
+    margin-top: .8rem;
+
+    margin-bottom:1rem;
+
+  }
+/*---- Media Queries ---- */
+@media (max-width: 768px){
+
+  .carousel-caption {
+     top: 45%;
+   
+  }
   
+  .carousel-caption h1 {
+    font-size: 350%;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 15px #000;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 140%;
+    font-weight: 400;
+    padding-bottom: .2rem;
+  }
+  
+  .carousel-caption .btn {
+    font-size: 95%;
+    padding: 8px 15;
+  }
+ 
+  
+
+}
+
+@media (max-width: 576px) {
+
+  .carousel-caption {
+    top: 40%;
+  
+ }
+ 
+ .carousel-caption h1 {
+   font-size: 250%;
+  
+ }
+ 
+ .carousel-caption h3 {
+   font-size: 110%;
+  
+ }
+ 
+ .carousel-caption .btn {
+   font-size: 90%;
+   padding: 4px 8;
+}
+
+.social a {
+  font-size: 2em;
+  padding: .7rem;
+}
+
+.display-4 {
+  font-size: 160%;
+}
+
+}
+
+/* POST CSS */
+
   .article-title {
     color: #444444;
   }
@@ -58,7 +298,7 @@ body {
   .article-metadata {
     padding-bottom: 1px;
     margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
+    border-bottom: 1px solid #000000
   }
   
   .article-metadata a:hover {
@@ -82,3 +322,5 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+  
