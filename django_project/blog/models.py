@@ -16,3 +16,8 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
 
+
+class Game(models.Model):
+    title = models.CharField(max_length=100)
+    recommendations = models.TextField()
+
