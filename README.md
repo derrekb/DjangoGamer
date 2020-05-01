@@ -4,4 +4,4 @@ GMRZ is a video game recommender system that allows users to search for game rec
 <h4>Tutorial</h4>
 
 To start out and create an account, go to the upper right of the page where it says Login Register as pictured below
-![](images/GMRZ%Tutorial/LoginHomePage.png)
+![](images/GMRZ%20Tutorial/LoginHomePage.png)
