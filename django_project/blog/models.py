@@ -1,13 +1,18 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-#from django.contrib.auth.models import 
 from django.urls import reverse
 
 class Game(models.Model):
 
     title = models.CharField(max_length=255)
-    information = models.TextField()
+    description = models.TextField()
+    genres = models.TextField()
+    tags = models.TextField()
+    developers = models.TextField()
+    publishers = models.TextField()
+    platforms = models.TextField()
+    places_to_purchase = models.TextField()
 
     class Meta:
       verbose_name_plural = "games"
@@ -17,8 +22,7 @@ class Game(models.Model):
 
 
 class Recommendation(models.Model):
-    title = models.CharField(max_length=255)
-
+    
     recommendation = models.TextField()
 
     class Meta:

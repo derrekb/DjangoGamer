@@ -3,20 +3,25 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import (ListView,DetailView,CreateView,UpdateView,DeleteView)
 from .models import Post
+from .models import Game
+from .models import Recommendation
 import operator
 from django.db.models import Q
-from .models import Game
+
 
 
 
 
 class RecommenderResultsView(ListView):
-        template_name = 'recommender.html'
+        model = Game
+        template_name = 'game_results.html'
+        paginate_by = 5
+        
 
         def get_queryset(self):
-            query = self.request.GET.get('q','')
+            query = self.request.GET.get('q')
             object_list = Game.objects.filter(
-                    Q(title__icontains = query) | Q(recommendations__icontains=query) | Q(id__icontains=query)
+                    Q(title__icontains = query)
             )
             return object_list  
 

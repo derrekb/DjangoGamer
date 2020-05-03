@@ -13,7 +13,8 @@ urlpatterns = [
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    path('game_result/', views.RecommenderResultsView.as_view(), name = 'results'),
     path('searchposts', views.searchposts, name='searchposts'),
-    path('result', RecommenderResultsView.as_view(), name = 'results'),
+  
 
 ]

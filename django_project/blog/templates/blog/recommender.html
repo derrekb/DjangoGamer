@@ -34,10 +34,10 @@
 
    <!--<form  action="{% url 'searchposts' %}" method="GET" value="{{request.GET.q}}">-->
    <form  action="{% url 'results' %}" method="GET" value="{{request.GET.q}}">
-        <!--Search Bar-->        
+    <!--Search Bar-->        
   <div class="row mb-4">
     <div class="form-group col-md-9 ">
-      <input id="exampleFormControlInput5" type="text" placeholder="Title. Ex. Call of Juarez" class="form-control form-control-underlined">
+      <input name = "q" type="text" placeholder="Title. Ex. Call of Juarez" class="form-control form-control-underlined">
     </div>
 
     <!--Button-->

@@ -1,8 +1,11 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    {% for post in posts %}
+</br>
+    {% for Game in object_list %}
         <article class="media content-section">
           <!-- Recent Games Go here -->
+
+          {{ Game.title }}
           
           </div>
         </article>
