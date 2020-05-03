@@ -5,6 +5,20 @@ from django.views.generic import (ListView,DetailView,CreateView,UpdateView,Dele
 from .models import Post
 import operator
 from django.db.models import Q
+from .models import Game
+
+
+
+
+class RecommenderResultsView(ListView):
+        template_name = 'recommender.html'
+
+        def get_queryset(self):
+            query = self.request.GET.get('q','')
+            object_list = Game.objects.filter(
+                    Q(title__icontains = query) | Q(recommendations__icontains=query) | Q(id__icontains=query)
+            )
+            return object_list  
 
 
 def home(request):
@@ -96,3 +110,8 @@ def searchposts(request):
 
     else:
         return render(request, 'blog/recommender.html')
+
+
+
+
+

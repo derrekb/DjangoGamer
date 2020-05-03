@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins: 400,500,700');
 
-
-
-
-
-
 html, body {
   height: 100%;
   width: 100%;
@@ -43,15 +38,17 @@ html, body {
 }
 
 .carousel-caption h1 {
+  color:rgb(255, 255, 255);
   font-size: 500%;
   text-transform: uppercase;
-  text-shadow: 1px 1px 15px #000;
+  text-shadow: 1px 1px 15px rgb(107, 0, 132);
 }
 
 .carousel-caption h3 {
+  color:rgb(255, 255, 255);
   font-size: 200%;
   font-weight: 500;
-  text-shadow: 1px 1px 10px #000;
+  text-shadow: 1px 1px 10px rgb(107, 0, 132);
   padding-bottom: 1rem;
 }
 
@@ -115,17 +112,26 @@ body {
 
 
   /*heading colors (carousal text) */
-  h1,h4, h6 {
+   h6 {
     color: #ffffff;
   }
+
+  h4{color: black;}
+
+  h1 {color: black;}
   
   h3.tagline, h3.motto, h3.display-1{
     color: white;
   }
 
-  h5.info, h5.hours , h3.py-display{
+  h3.py-display{
 
     color: black;
+  }
+
+  h5.info, h5.hours {
+
+    color:white;
   }
 
   h1.display-4 {

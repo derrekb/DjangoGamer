@@ -4,21 +4,20 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'blog/recommender.css' %}">
+    
 </head>
 
 <div class = 'text-center'>
-
 <h1 class = 'row justify-content-center'>
     Recommender Search 
 </h1>
-
 <h4 class 'mx-auto'>
     "Whatcha playin?"
 </h4>
 
 <p class = 'text-center'>
 
-    Type in a game and we'll return what you some recommendations.
+    Type in a game and we'll return you some recommendations.
 
 </div>
 
@@ -33,7 +32,8 @@
 <br/>
 <body>
 
-    <form  action="{% url 'searchposts' %}" method="GET" value="{{request.GET.q}}">
+   <!--<form  action="{% url 'searchposts' %}" method="GET" value="{{request.GET.q}}">-->
+   <form  action="{% url 'results' %}" method="GET" value="{{request.GET.q}}">
         <!--Search Bar-->        
   <div class="row mb-4">
     <div class="form-group col-md-9 ">
@@ -42,7 +42,7 @@
 
     <!--Button-->
     <div class="form-group col-md-3">
-      <button type="submit" class="btn btn-secondary rounded-pill btn-block shadow-sm">Find!</button>
+      <button type="submit" class="btn btn-secondary rounded-pill btn-block shadow-sm">Search</button>
     </div>
   </div>
     </form>
@@ -56,12 +56,13 @@
 <h1>Results for <b>{{ request.GET.q }}</b></h1>
 <br/><br/>
 
-{% for result in results %}
+{%for RecommenderResultsView.get_queryset('document.getElementById("exampleFormControlInput5").value}
+{% for game in object_list %}
 
-{{result.title}}
+{{game.title}}
 <br/>
 
-{{result.content}}
+{{game.recommendations}}
 <br/>
 
 {% endfor %}

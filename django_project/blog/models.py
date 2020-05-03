@@ -1,7 +1,31 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+#from django.contrib.auth.models import 
 from django.urls import reverse
+
+class Game(models.Model):
+
+    title = models.CharField(max_length=255)
+    information = models.TextField()
+
+    class Meta:
+      verbose_name_plural = "games"
+
+    def __str__(self):
+        return self.title
+
+
+class Recommendation(models.Model):
+    title = models.CharField(max_length=255)
+
+    recommendation = models.TextField()
+
+    class Meta:
+          verbose_name_plural = "recommendations"
+
+    def __str__(self):
+        return self.recommendation
 
 
 class Post(models.Model):
@@ -17,7 +41,6 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={'pk': self.pk})
 
 
-class Game(models.Model):
-    title = models.CharField(max_length=100)
-    recommendations = models.TextField()
 
+
+#Reminder: add more fields
