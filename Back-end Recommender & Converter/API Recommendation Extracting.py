@@ -32,9 +32,7 @@ while x < 4:
         #Sets the max amount of recommendations
         while i < 5:
             #Forces the current recommended game to only use ascii charecters
-            rec = str(next(sug).name)
-            rec = rec.encode("ascii", "ignore")
-            rec = rec.decode()
+            rec = makeAscii(next(sug).name)
             #Writes the number rank of the recommendation and then name of the game to the file
             tFile.write(str(i + 1) + ". " + rec)
             tFile.write("\n")

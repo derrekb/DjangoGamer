@@ -37,7 +37,7 @@ while x < len(list):
     x = x + 1
     rec = []
 
-    # Writes the data of the game into column B
+    # Writes the data of the game individually into column B-I
     while list[x] != "":
         rec.append(list[x])
         x = x + 1
@@ -45,7 +45,14 @@ while x < len(list):
     if len(rec) == 0:
         worksheet.write('B' + str(row), "Null")
     if len(rec) == 8:
-        worksheet.write('B' + str(row), rec[0] + "\n" + rec[1] + "\n" + rec[2] + "\n" + rec[3] + "\n" + rec[4] + "\n" + rec[5] + "\n" + rec[6] + "\n" + rec[7])
+        worksheet.write('B' + str(row), rec[0])
+        worksheet.write('C' + str(row), rec[1])
+        worksheet.write('D' + str(row), rec[2])
+        worksheet.write('E' + str(row), rec[3])
+        worksheet.write('F' + str(row), rec[4])
+        worksheet.write('G' + str(row), rec[5])
+        worksheet.write('H' + str(row), rec[6])
+        worksheet.write('I' + str(row), rec[7])
 
     x = x + 1
     row = row + 1
