@@ -1,6 +1,8 @@
 # GMRZ Gaming Recommender
 GMRZ is a video game recommender system that allows users to search for game recommendations based on the games they searched.
 
+![](GMRZ%20Tutorial/GMRZ_Cyberpunk_Background.png)
+
 <h2>Tutorial</h2>
 <h3>User Account Creation</h3>
 
