@@ -1,7 +1,7 @@
 # GMRZ Gaming Recommender
 GMRZ is a video game recommender system that allows users to search for game recommendations based on the games they searched.
 
-<h4>Tutorial</h4>
+<h2>Tutorial</h2>
 <h3>User Account Creation</h3>
 
 To start out and create an account, go to the upper right of the page where it says Login Register as pictured below
@@ -36,10 +36,20 @@ From here the user can change their username, email, and profile photo by changi
 <h3>Searching For A Game</h3>
 
 Now if you want to search for a game recommendation you first click the search bar on the top left.
+
 ![](GMRZ%20Tutorial/search.png)
 
 Once you click the button you are brought to this recommender search bar
+
 ![](GMRZ%20Tutorial/search1.png)
 
+
+
 You then can simply search for a game that you like to get recommended similiar games which will be shown like below
+
+
 ![](GMRZ%20Tutorial/search2.png)
+
+You can then always click either the GMRZ logo or Home button to go back to the home page
+
+
