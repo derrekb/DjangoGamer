@@ -36,6 +36,9 @@ html, body {
   transform: translateY(-50%);
 
 }
+h3 {
+  color: purple
+}
 
 .carousel-caption h1 {
   color:rgb(255, 255, 255);
@@ -102,6 +105,16 @@ html, body {
   margin: 1rem;
 
 }
+
+li.item1, li.item2, li.item3, li.item4, li.item5{
+
+  font-size:5em;
+
+
+}
+
+
+
 /*
 body {
     background: #ffffff;
@@ -139,6 +152,7 @@ body {
   }
 
   h2{
+    font-size: small;
     color: #428bca;
   }
   

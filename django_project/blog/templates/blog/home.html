@@ -1,15 +1,56 @@
 {% extends "blog/base.html" %}
 {% block content %}
-</br>
-    {% for Game in object_list %}
-        <article class="media content-section">
-          <!-- Recent Games Go here -->
 
-          {{ Game.title }}
-          
-          </div>
-        </article>
-    {% endfor %}
+
+<h1>Games Coming Soon...</h1>
+
+<div class = "container-fluid padding">
+  <div class = "row text-center padding">
+    <div class = "col-xs-12 col-sm-6 col-md-4">
+      <img class = "card-imd-top" src= "media\AC_NH.jpg">
+          <h3 class = "AC-display">Animal Crossing: New Horizons</h3>
+      <p> Animal Crossing: New Horizons is a 2020 life simulation video game
+         developed and published by Nintendo for the Nintendo Switch. </p>
+   
+    </div>
+    <div class = "col-xs-12 col-sm-6 col-md-4">
+      <img class = "card-imd-top" src= "media\DOOM.jpg"></i>
+          <h3 class = "DOOM-display"> Doom Eternal</h3>
+      <p>Doom Eternal is a first person shooter video game developed by id Software
+         and published by Bethesda Softworks. </p>
+  </div>
+  
+  <div class = "col-xs-12 col-sm-6 col-md-4">
+    <img class = "card-imd-top" src= "media\FF7R.jpg"></i>
+        <h3 class = "FF7R-display">Final Fantasy 7:Remake</h3>
+    <p>Final Fantasy VII Remake is an action role-playing game
+       developed and published by Square Enix </p>
+  </div>
+  <!--Padding --><hr class = "my-4">
+  </div>
+  <hr class = "my-4">
+</br>
+
+<!--
+  {% for Game in object_list %}
+  <article class="media content-section">
+    
+
+    {{ Game.Title }}
+    
+    </div>
+  </article>
+{% endfor %}
+
+
+  
+-->
+<div>
+
+
+</div>
+   <!--
+
     {% if is_paginated %}
 
       {% if page_obj.has_previous %}
@@ -31,4 +72,7 @@
       {% endif %}
 
     {% endif %}
+
+-->
+
 {% endblock content %}

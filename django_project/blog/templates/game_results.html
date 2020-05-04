@@ -1,15 +1,88 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load boostrap}
 {% block content %}
-<h1>Search Results</h1>
 
-<ul>
+<h1 >Search Results</h1>
+
+
+
+
+
+<div class="list-group" id = "game_header">
   {% for Game in object_list %}
-    <li>
-        {{Game.id}}) {{ Game.title }} 
-    </li>
-  {% endfor %}
+  <a  class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h3 class="mb-1">{{Game.title}}</h3>
+      
+     
+           
+    </div>
+    <div>{{Game.developers}}</div>  
 
-    </ul>
+
+        <p class="mb-1">
+          <h5>Recommendations</h5>
+         
+          <li class = "item1">
+            {{Game.rec_1}} 
+          </li>
+          <li class = "item2">
+            {{Game.rec_2}} 
+          </li>
+          <li class = "item3">
+            {{Game.rec_3}} 
+          </li>
+          <li class = "item4">
+            {{Game.rec_4}} 
+          </li>
+          <li class = "item5">
+            {{Game.rec_5}} 
+          </li>
+        
+        </p>
+        <h4>  {{Game.genres}}  </h4> 
+        <br>
+        <h3>{{Game.tags}}</h3>
+        <br>
+       
+      <h5 maxlength = "50">  {{Game.description}} <h5>
+      </p>
+
+      <h2>{{Game.places_to_purchase}}</h2>
+
+    
+      
+      {% endfor %}
+  </a>
+  
+</div>
+<!---------------------------------------------------------------------------------------------------------->
+
+
+<!-----------------------------------------------------
+  <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+         3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+        Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
+        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. 
+        Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+----------------------------------------------------->
+
+
 
 {% endblock %}

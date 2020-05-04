@@ -14,22 +14,24 @@ class Game(models.Model):
     platforms = models.TextField()
     places_to_purchase = models.TextField()
 
+    #REC SECTION-----------------------------------
+    rec_1 = models.TextField()
+    rec_2 = models.TextField()
+    rec_3 = models.TextField()
+    rec_4 = models.TextField()
+    rec_5 = models.TextField()
+    #----------------------------------------------
+
     class Meta:
       verbose_name_plural = "games"
 
     def __str__(self):
         return self.title
 
+    def info_preview(self):
+        return self.body
+        
 
-class Recommendation(models.Model):
-    
-    recommendation = models.TextField()
-
-    class Meta:
-          verbose_name_plural = "recommendations"
-
-    def __str__(self):
-        return self.recommendation
 
 
 class Post(models.Model):

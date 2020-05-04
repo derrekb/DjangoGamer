@@ -1,10 +1,93 @@
 from django.test import TestCase, SimpleTestCase
 import unittest
 from unittest.mock import MagicMock
-from django.shortcuts import reverse, resolve
+from django.shortcuts import reverse
 from .models import Game
-from .models import Recommendation
-from blog.views import Po
+#from blog.models import title, description, genres ,tags ,developers, publishers ,platforms, places_to_purchase
+
+
+
+
+class GameTest(TestCase):
+    def create_game(self, title = "Zoldo", description = "Zoldo must save Lonk. Save him"):
+        return Game.objects.create(title = title,
+        description =  description
+        )
+
+        def test_game_creation(self):
+            a = self.create.game()
+            self.assertTrue(isinstance(a, Game))
+            self.assertEqual(a. __str__(), a.title)
+
+
+
+# class GameTestCase(TestCase):
+#     def setUp(self):
+#       Game.objects.create(name="laststory", description="sword")
+#       Game.objects.create(name="finalfantasy", description="katana")
+
+#     def test_animals_can_speak(self):
+#         """Animals that can speak are correctly identified"""
+#         laststory = Game.objects.get(name="laststory")
+#         finalfantasy = Game.objects.get(name="finalfantasy")
+#         self.assertEqual(laststory.description(), "sword")
+#         self.assertEqual(finalfantasy.description(), "katana")
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #
 # class HomePageTests(SimpleTestCase):

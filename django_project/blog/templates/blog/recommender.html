@@ -51,24 +51,6 @@
 
 
 
-{% if submitbutton == 'Search' and request.GET.q != '' %}
-{% if results %}
-<h1>Results for <b>{{ request.GET.q }}</b></h1>
-<br/><br/>
 
-{%for RecommenderResultsView.get_queryset('document.getElementById("exampleFormControlInput5").value}
-{% for game in object_list %}
-
-{{game.title}}
-<br/>
-
-{{game.recommendations}}
-<br/>
-
-{% endfor %}
-{% else %}
-No search results for this query
-{% endif %}
-{% endif %}
 
 {% endblock content %}
