@@ -50,7 +50,7 @@ You can then simply search for a game that you like to get recommended similiar 
 
 ![](GMRZ%20Tutorial/search2.png)
 
-You can then always click either the GMRZ logo or <b>Home</b> button to go back to the home page.
+You can always click either the GMRZ logo or <b>Home</b> button to go back to the home page.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------
