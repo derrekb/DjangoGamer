@@ -32,3 +32,14 @@ By selecting the <b>Profile</b> page they can now access they account informatio
 ![](GMRZ%20Tutorial/ProfilePage.png)
 
 From here the user can change their username, email, and profile photo by changing the fields and clicking on the "update" button
+
+<h3>Searching For A Game</h3>
+
+Now if you want to search for a game recommendation you first click the search bar on the top left.
+![](GMRZ%20Tutorial/search.png)
+
+Once you click the button you are brought to this recommender search bar
+![](GMRZ%20Tutorial/search1.png)
+
+You then can simply search for a game that you like to get recommended similiar games which will be shown like below
+![](GMRZ%20Tutorial/search2.png)
