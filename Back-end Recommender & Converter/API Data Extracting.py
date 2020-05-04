@@ -3,10 +3,10 @@ import re
 import html
 import unittest
 
-#Instantiation of the API with the name of our application
+# Instantiation of the API with the name of our application
 rawg = rawgpy.RAWG("GMRZ")
 
-#Name of the file
+# Name of the file
 tFile = open("GameData.txt", "w")
 
 # Forces the name of the game to only use ascii charecters
@@ -22,11 +22,11 @@ def remHtml(input):
     out = html.escape(no_tags)
     return out
 
-#Starting game ID number
+# Starting game ID number
 x = 1
 
-#Current total games in the API = 428553
-#Set to 3 for testing
+# Current total games in the API = 428553
+# Set to 3 for testing
 while x <= 3:
     try:
         # Saves the current games data from the API to variable "cur"
@@ -41,11 +41,11 @@ while x <= 3:
         tFile.write("\n")
         des = makeAscii(cur.description)
         des = remHtml(des)
-        #Removes newlines from the string
+        # Removes newlines from the string
         des = des.rstrip()
-        #Removes unwanted charecters from the string that might make newlines
+        # Removes unwanted charecters from the string that might make newlines
         des = re.sub('[^a-zA-Z0-9-_*.:/]', " ", des)
-        #Replaces newlines with blanks just to be sure they are gone
+        # Replaces newlines with blanks just to be sure they are gone
         des = des.replace("\n", "")
         # Writes the description of the game to the file
         tFile.write("Description: " + des)
@@ -53,7 +53,7 @@ while x <= 3:
         # Writes the genres of the game to the file
         tFile.write("Genres: ")
         i = 0
-        #Writes every genre in the list and formats it properly
+        # Writes every genre in the list and formats it properly
         while len(cur.genres) > i:
             gen = makeAscii(cur.genres[i].name)
             tFile.write(gen)
@@ -117,11 +117,11 @@ while x <= 3:
         tFile.write("\n")
         i = 0
         sug = cur.suggestions
-        #Sets the max amount of recommendations
+        # Sets the max amount of recommendations
         while i < 5:
-            #Forces the current recommended game to only use ascii charecters
+            # Forces the current recommended game to only use ascii charecters
             rec = makeAscii(next(sug).name)
-            #Writes the number rank of the recommendation and then name of the game to the file
+            # Writes the number rank of the recommendation and then name of the game to the file
             tFile.write(str(i + 1) + ". " + rec)
             tFile.write("\n")
             i = i + 1
@@ -130,7 +130,7 @@ while x <= 3:
         # Prints the current ID in the console
         print(x)
         x = x + 1
-    #Catches Attribute Errors if there is no data from the api for that ID
+    # Catches Attribute Errors if there is no data from the api for that ID
     except AttributeError:
         print(x)
         print("No data")
@@ -145,18 +145,18 @@ while x <= 3:
         tFile.write("\n")
         print("End")
         x = x + 1
-#Closes the file
+# Closes the file
 tFile.close()
 
 tFile = open("GameData.txt", "r")
-#ascii checking
+# ascii checking
 isascii = lambda s: len(s) == len(s.encode())
-#Data for testing
+# Data for testing
 ges = rawg.get_game("1").suggestions
 
-#Unit tests
+# Unit tests
 class Tests(unittest.TestCase):
-    #Testing ascii checking
+    # Testing ascii checking
     def testAscii1(self):
         self.assertTrue(isascii("Ascii"))
     def testAscii2(self):
@@ -164,19 +164,19 @@ class Tests(unittest.TestCase):
     # Testing game name retrieval from the API
     def testName(self):
         self.assertTrue("D/Generation HD" == rawg.get_game("1").name)
-    #Testting values are getting converted to ascii
+    # Testing values are getting converted to ascii
     def testAscii3(self):
         self.assertFalse(isascii(rawg.get_game("183").name))
     def testAscii4(self):
         self.assertTrue(isascii(makeAscii(rawg.get_game("183").name)))
-    #Checking unwanted html tags get removed
+    # Checking unwanted html tags get removed
     def testHtml1(self):
         self.assertFalse("New control menu<br/></li><li> can save at any point" == "New control menu can save at any point")
     def testHtml2(self):
         self.assertTrue(remHtml("New control menu<br/></li><li> can save at any point") == "New control menu can save at any point")
     def testHtml3(self):
         self.assertTrue(remHtml("<strong>Extreme Exorcism</strong>") == "Extreme Exorcism")
-    #Cheking text file
+    # Checking text file
     def testFile1(self):
         self.assertTrue("1. D/Generation HD" == tFile.readline().rstrip())
     def testFile2(self):
@@ -186,7 +186,7 @@ class Tests(unittest.TestCase):
         self.assertTrue("Genres: Adventure, Puzzle" == tFile.readline().rstrip())
     def testFile4(self):
         self.assertTrue("Tags: Full controller support, Steam Achievements, Steam Leaderboards, Retro, Singleplayer" == tFile.readline().rstrip())
-    #Checking recommendations
+    # Checking recommendations
     def testRec1(self):
         self.assertTrue("Super Strawberry Man" == str(next(ges).name).rstrip())
     def testRec2(self):
@@ -194,9 +194,9 @@ class Tests(unittest.TestCase):
     def testRec3(self):
         self.assertTrue("Imprisoned Light" == str(next(rawg.get_game("2").suggestions).name))
 
-#Runs the tests
+# Runs the tests
 if __name__ == '__main__':
     unittest.main()
 
-#Closes the file
+# Closes the file
 tFile.close()
