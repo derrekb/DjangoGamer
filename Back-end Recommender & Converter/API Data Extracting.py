@@ -26,10 +26,10 @@ def remHtml(input):
 x = 1
 
 #Current total games in the API = 428553
-#Set to 4 for testing
+#Set to 3 for testing
 while x <= 3:
     try:
-        # Saves the current games data to variable "cur"
+        # Saves the current games data from the API to variable "cur"
         cur = rawg.get_game(str(x))
         name = makeAscii(cur.name)
         # Writes the current ID of the game and its name to the file
