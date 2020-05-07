@@ -3,7 +3,9 @@
 <h2>Contributors/Roles</h2>
 <b> Justin Tom and Michael Kozak:</b> Back end developers. API data extraction and formatting, Recommender configuration and checking, data text to excel conversion.  
 
-<b>Derrek Beeck and Hans Yabao:</b> Front end developers, created the UI,acount features, login/logoff, visual formatting
+<b>Derrek Beeck and Hans Yabao:</b> Front end developers, created the UI,acount features, login/logoff, visual formatting.
+
+
 GMRZ is a video game recommender system that allows users to search for game recommendations based on the games they searched.
 
 ![](GMRZ%20Tutorial/GMRZ_Cyberpunk_Background.png)
